@@ -26,6 +26,15 @@ public class FirstClass {
     driver.findElement(By.id("lst-ib")).sendKeys(Keys.ENTER);
   }
 
+  @Test
+  public void elementsTest(){
+    driver.get("https://www.google.com/");
+    driver.findElement (By.id("fsettl")).click();
+
+    driver.navigate().refresh();
+    driver.findElement (By.id("fsettl")).click();
+  }
+
   @AfterClass(alwaysRun = true)
   public void tearDown() throws Exception {
     driver.quit();
