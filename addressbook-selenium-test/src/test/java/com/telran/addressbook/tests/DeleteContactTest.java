@@ -20,4 +20,20 @@ public class DeleteContactTest extends TestBase {
         Assert.assertEquals(after, before - 1);
 
     }
+
+    @Test
+    public void contactDeletionAllTest(){
+        app.getNavigationHelper().goToHomePage();
+
+        if(!app.getContactHelper().isThereAContact()){
+            app.getContactHelper().createContact();
+        }
+
+        app.getContactHelper().selectAllContacts();
+        app.getContactHelper().initContactDeletion();
+        app.acceptAlert();
+        int after = app.getContactHelper().getContactCount();
+        Assert.assertEquals(after, 0);
+
+    }
 }
