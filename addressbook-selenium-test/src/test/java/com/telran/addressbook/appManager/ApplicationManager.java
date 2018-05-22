@@ -8,20 +8,24 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class ApplicationManager {
-    protected WebDriver driver;
+public class ApplicationManager  {
+
+    private ContactHelper contactHelper;
     private GroupHelper groupHelper;
+    private NavigationHelper navigationHelper;
+    private HelperBase helperBase;
+    private WebDriver driver;
+
 
     public void start() {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         groupHelper = new GroupHelper(driver);
+        navigationHelper = new NavigationHelper(driver);
+        helperBase = new HelperBase(driver);
+        contactHelper=new ContactHelper(driver);
         openAddressbook("http://localhost/addressbook/");
         login("admin", "secret");
-    }
-
-    public void goToGroupsPage() {
-        driver.findElement(By.linkText("groups")).click();
     }
 
     public void login(String user, String pwd) {
@@ -37,53 +41,23 @@ public class ApplicationManager {
         driver.get(url);
     }
 
-    public void stop() {
-        driver.quit();
-    }
-
-    private boolean isElementPresent(By by) {
-        try {
-            driver.findElement(by);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
-
-    private boolean isAlertPresent() {
-        try {
-            driver.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
-    }
-
     public void acceptAlert() {
         driver.switchTo().alert().accept();
     }
 
-    public void selectContact() {
-        driver.findElement(By.name("selected[]")).click();
+    public void stop() {
+        driver.quit();
     }
 
-    public void initContactDeletion() {
-        driver.findElement(By.xpath("//html//div[2]/input[1]")).click();
-    }
-
-    public void initModifyContact() {
-        driver.findElement(By.xpath("//img[@alt='Edit']")).click();
-    }
-
-    public void submitContactModification() {
-        driver.findElement(By.name("update")).click();
-    }
-
-    public int getContactCount() {
-        return driver.findElements(By.name("selected[]")).size();
+    public ContactHelper getContactHelper() {
+        return contactHelper;
     }
 
     public GroupHelper getGroupHelper() {
         return groupHelper;
+    }
+
+    public NavigationHelper getNavigationHelper() {
+        return navigationHelper;
     }
 }
