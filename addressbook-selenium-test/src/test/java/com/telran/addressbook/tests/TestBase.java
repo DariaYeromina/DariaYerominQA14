@@ -1,6 +1,7 @@
 package com.telran.addressbook.tests;
 
 import com.telran.addressbook.appManager.ApplicationManager;
+import org.openqa.selenium.remote.BrowserType;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
@@ -8,7 +9,7 @@ import org.testng.annotations.BeforeSuite;
 
 public class TestBase {
 
-    public static ApplicationManager app = new ApplicationManager();
+    public static ApplicationManager app = new ApplicationManager(BrowserType.CHROME);
 
     @BeforeSuite(alwaysRun = true)
     public void setUp() throws Exception {

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.telran.addressbook.tests.CreatGroupTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-05-29T06:42:28" hostname="DESKTOP-FBSSRF1" time="2.481">
+  <properties/>
+  <testcase name="testCreatGroupEmpty" classname="com.telran.addressbook.tests.CreatGroupTest" time="0.934"/>
+  <testcase name="testCreatGroupLongName" classname="com.telran.addressbook.tests.CreatGroupTest" time="0.731"/>
+  <testcase name="testCreatGroupShortName" classname="com.telran.addressbook.tests.CreatGroupTest" time="0.812"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

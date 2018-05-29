@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.telran.addressbook.tests.ModifyContactTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-05-29T06:46:18" hostname="DESKTOP-FBSSRF1" time="4.058">
+  <properties/>
+  <testcase name="contactModificationTests" classname="com.telran.addressbook.tests.ModifyContactTest" time="4.058"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

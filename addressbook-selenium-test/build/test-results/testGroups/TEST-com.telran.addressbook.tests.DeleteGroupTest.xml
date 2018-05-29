@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.telran.addressbook.tests.DeleteGroupTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-05-29T06:42:31" hostname="DESKTOP-FBSSRF1" time="0.436">
+  <properties/>
+  <testcase name="groupDeletionTest" classname="com.telran.addressbook.tests.DeleteGroupTest" time="0.436"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
