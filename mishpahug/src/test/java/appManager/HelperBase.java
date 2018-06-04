@@ -1,4 +1,4 @@
-package com.telran.addressbook.appManager;
+package appManager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;

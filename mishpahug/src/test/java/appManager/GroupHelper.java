@@ -1,7 +1,6 @@
-package com.telran.addressbook.appManager;
+package appManager;
 
 import com.telran.addressbook.model.GroupData;
-import com.telran.addressbook.tests.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -66,13 +65,4 @@ public class GroupHelper extends HelperBase {
         submitGroupCreation(By.name("submit"));
         returnToGroupsPage();
     }
-
-    public void createGroupWithThisName(String groupName) {
-        TestBase.app.getNavigationHelper().goToGroupsPage();
-        initGroupCreation();
-        fillGroupForm(new GroupData().withName(groupName));
-        submitGroupCreation(By.name("submit"));
-        TestBase.app.getNavigationHelper().goToHomePage();
-    }
 }
-

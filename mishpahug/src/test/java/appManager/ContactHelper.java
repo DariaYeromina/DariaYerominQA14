@@ -1,7 +1,6 @@
-package com.telran.addressbook.appManager;
+package appManager;
 
 import com.telran.addressbook.model.ContactData;
-import com.telran.addressbook.tests.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -18,18 +17,6 @@ public class ContactHelper extends HelperBase {
     }
 
     public void fillContactForm(ContactData contactData) {
-        if(contactData.getGroup() != null){
-        if (isElementPresent(By.name("new_group"))&&
-                isElementPresent(By.xpath("//select[@name='new_group']/option[text()='"+contactData.getGroup()+"']"))) {
-            new Select(driver.findElement(By.name("new_group")))
-                    .selectByVisibleText(contactData.getGroup());
-        } else if (isElementPresent(By.name("new_group"))){
-            TestBase.app.getGroupHelper().createGroupWithThisName(contactData.getGroup());
-            TestBase.app.getNavigationHelper().goToHomePage();
-            initContactCreation();
-            new Select(driver.findElement(By.name("new_group")))
-                    .selectByVisibleText(contactData.getGroup());
-        }}
         type(By.name("firstname"), contactData.getName());
         type(By.name("lastname"), contactData.getLastname());
         type(By.name("mobile"), contactData.getPhone());
